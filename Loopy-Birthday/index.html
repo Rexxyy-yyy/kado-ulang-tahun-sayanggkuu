@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sayanggku Yang Ke-21. Semoga kamu selalu bahagia dan sehat selalu yaa sayangg!</title>
+    
+    <!-- Menggunakan font membulat yang lucu -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- 🌟 LINK CSS AOS UNTUK ANIMASI SCROLL 🌟 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #FFE4E1; font-family: 'Quicksand', sans-serif; color: #4A4A4A; text-align: center; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Fredoka One', cursive; color: #FF69B4; margin-bottom: 15px; }
+        
+        .login-container { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: #FFE4E1; padding: 20px; }
+        .loopy-login { width: 150px; margin-bottom: 20px; border-radius: 20px; }
+        .question { font-weight: bold; color: #FF69B4; margin: 15px 0; font-size: 1.2em; }
+        #passwordInput { padding: 12px 20px; font-size: 1em; border: 2px solid #FF9AA2; border-radius: 25px; outline: none; width: 80%; max-width: 300px; text-align: center; font-family: 'Quicksand', sans-serif; margin-bottom: 15px; transition: 0.3s; }
+        #passwordInput:focus { border-color: #FF69B4; box-shadow: 0 0 10px rgba(255, 105, 180, 0.3); }
+        .error-text { color: red; font-weight: bold; margin-top: 15px; min-height: 20px; }
+        
+        .hero { padding: 80px 20px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .loopy-img { width: 200px; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+        
+        .love-letter { padding: 40px 20px; }
+        .box { background: white; max-width: 500px; margin: 0 auto; padding: 30px; border-radius: 25px; box-shadow: 0 10px 20px rgba(255, 105, 180, 0.15); line-height: 1.6; }
+        .signature { margin-top: 20px; font-weight: bold; color: #FF69B4; font-size: 1.2em; }
+        
+        .gallery { padding: 40px 20px; }
+        .photo-grid { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; max-width: 600px; margin: 0 auto; }
+        
+        .photo img { width: 150px; height: 150px; object-fit: cover; border: 5px solid white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transform: rotate(-4deg); transition: 0.3s; cursor: pointer; }
+        .photo:nth-child(even) img { transform: rotate(4deg); }
+        .photo img:hover { transform: scale(1.15) rotate(0deg); z-index: 10; position: relative; }
+        
+        .reply-section { padding: 20px 20px; }
+        textarea { width: 100%; padding: 15px; border: 2px solid #FF9AA2; border-radius: 15px; font-family: 'Quicksand', sans-serif; font-size: 1em; color: #4A4A4A; margin-top: 10px; margin-bottom: 15px; outline: none; resize: vertical; box-sizing: border-box; transition: 0.3s; }
+        textarea:focus { border-color: #FF69B4; box-shadow: 0 0 10px rgba(255, 105, 180, 0.2); }
+        .submit-btn { width: 100%; background-color: #FF9AA2; color: white; border: none; padding: 15px 30px; font-size: 1.2em; font-family: 'Fredoka One', cursive; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 15px rgba(255, 154, 162, 0.4); transition: 0.3s; }
+        .submit-btn:hover { background-color: #FF69B4; transform: translateY(-3px); }
+        
+        .mini-game { padding: 30px 20px; min-height: 250px; }
+        .game-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 25px; align-items: center; }
+        #btnSayang { background-color: #FF69B4; color: white; border: none; padding: 15px 30px; font-size: 1.1em; font-family: 'Fredoka One', cursive; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); }
+        #btnNggak { background-color: #A9A9A9; color: white; border: none; padding: 15px 30px; font-size: 1.1em; font-family: 'Fredoka One', cursive; border-radius: 50px; cursor: pointer; position: relative; transition: 0.1s; }
+        
+        .surprise-section { padding: 60px 20px 100px; }
+        #surpriseBtn { background-color: #FF9AA2; color: white; border: none; padding: 15px 30px; font-size: 1.2em; font-family: 'Fredoka One', cursive; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 15px rgba(255, 154, 162, 0.4); transition: 0.3s; }
+        #surpriseBtn:hover { background-color: #FF69B4; transform: translateY(-3px); }
+        .hidden { display: none; margin-top: 30px; animation: fadeIn 1s forwards; }
+        .loopy-love { margin-top: 20px; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .heart { position: fixed; top: -10vh; font-size: 24px; z-index: 1000; pointer-events: none; animation: fall linear forwards; }
+        @keyframes fall { to { transform: translateY(110vh); } }
+
+        /* --- POP-UP NOTIFIKASI (TOAST) --- */
+        #cuteToast {
+            position: fixed;
+            bottom: -150px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 3px solid #FF9AA2;
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
+            z-index: 10000;
+            width: 90%;
+            max-width: 350px;
+            transition: bottom 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+        }
+        #cuteToast.show { bottom: 30px; }
+        .toast-text p { margin: 0; font-size: 0.95em; color: #4A4A4A; font-family: 'Quicksand', sans-serif; text-align: left; }
+        .toast-text strong { display: block; color: #FF69B4; font-family: 'Fredoka One', cursive; font-size: 1.1em; text-align: left; margin-bottom: 2px; }
+
+        /* --- EFEK JEJAK KURSOR (CURSOR TRAIL) --- */
+        .cursor-trail {
+            position: absolute;
+            pointer-events: none; 
+            font-size: 18px;
+            animation: trailFade 1s linear forwards;
+            z-index: 99999;
+        }
+        @keyframes trailFade { 0% { opacity: 1; transform: scale(1) translateY(0); } 100% { opacity: 0; transform: scale(0.3) translateY(-20px); } }
+
+        /* --- EFEK TABURAN SAAT DIKLIK (CLICK SPARKLES) --- */
+        .click-sparkle {
+            position: absolute;
+            pointer-events: none; 
+            font-size: 20px;
+            animation: explode 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            z-index: 99999;
+        }
+        @keyframes explode { 0% { opacity: 1; transform: translate(0, 0) scale(1) rotate(0deg); } 100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0.2) rotate(var(--rot)); } }
+
+        /* --- KALKULATOR WAKTU BERSAMA --- */
+        .time-counter { padding: 10px 20px; }
+        .counter-container { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+        .time-box { background-color: #FF9AA2; color: white; padding: 15px 20px; border-radius: 15px; min-width: 80px; box-shadow: 0 5px 15px rgba(255, 154, 162, 0.4); display: flex; flex-direction: column; align-items: center; transition: transform 0.3s; }
+        .time-box:hover { transform: scale(1.1); }
+        .time-box span { font-size: 2em; font-family: 'Fredoka One', cursive; }
+        .time-box small { font-size: 0.9em; font-weight: bold; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* --- KUPON CINTA DIGITAL --- */
+        .coupon-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+        .coupon { background-color: #FFF; border: 2px dashed #FF69B4; padding: 20px; border-radius: 15px; width: 100%; max-width: 250px; box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2); cursor: pointer; transition: 0.3s; position: relative; }
+        .coupon:hover { transform: translateY(-5px) rotate(-2deg); box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4); }
+        .coupon h3 { font-family: 'Fredoka One', cursive; color: #FF9AA2; margin-bottom: 8px; font-size: 1.2em; }
+        .coupon p { font-size: 0.9em; margin-bottom: 15px; color: #4A4A4A; }
+        .coupon .status { display: inline-block; background-color: #FF9AA2; color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.85em; font-weight: bold; transition: 0.3s; }
+        .coupon.claimed { background-color: #f5f5f5; border-color: #ccc; cursor: not-allowed; transform: none; opacity: 0.8; box-shadow: none; }
+        .coupon.claimed h3 { color: #999; }
+        .coupon.claimed .status { background-color: #4CAF50; }
+        
+        /* --- KARTU RAHASIA 3D --- */
+        .flip-cards-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .flip-card { background-color: transparent; width: 250px; height: 200px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform-style: preserve-3d; }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 15px; display: flex; align-items: center; justify-content: center; padding: 20px; box-shadow: 0 5px 15px rgba(255, 105, 180, 0.2); box-sizing: border-box; }
+        .flip-card-front { background-color: #FF9AA2; color: white; border: 2px solid white; }
+        .flip-card-front h3 { font-size: 1.1em; color: white; margin: 0; font-family: 'Quicksand', sans-serif; font-weight: 700; line-height: 1.4; }
+        .flip-card-back { background-color: white; color: #FF69B4; transform: rotateY(180deg); border: 2px solid #FF9AA2; }
+        .flip-card-back p { font-family: 'Fredoka One', cursive; font-size: 1.1em; margin: 0; color: #FF69B4; }
+        
+        /* --- PEMINDAI SIDIK JARI JODOH --- */
+        .scanner-section { padding: 20px 20px; }
+        .scanner-container { margin-top: 20px; display: flex; flex-direction: column; align-items: center; }
+        .scan-btn { background-color: #FF9AA2; color: white; border: none; padding: 20px 40px; font-size: 1.2em; font-family: 'Fredoka One', cursive; border-radius: 50px; cursor: pointer; box-shadow: 0 5px 15px rgba(255, 154, 162, 0.4); user-select: none; -webkit-user-select: none; transition: 0.2s; }
+        .scan-btn:active { transform: scale(0.95); background-color: #FF69B4; }
+        .progress-bar-bg { width: 100%; max-width: 300px; height: 25px; background-color: #FFF0F5; border-radius: 15px; margin: 20px 0 10px; overflow: hidden; border: 2px solid #FF9AA2; }
+        .progress-fill { width: 0%; height: 100%; background-color: #FF69B4; transition: width 0.1s linear; }
+        #scanStatus { font-weight: bold; color: #4A4A4A; font-size: 0.9em; }
+        .result-box { background-color: #FFF0F5; padding: 15px; border-radius: 15px; border: 2px dashed #FF69B4; margin-top: 20px; animation: fadeIn 1s forwards; }
+        .result-box h3 { color: #FF1493; margin-bottom: 5px; }
+        
+        /* --- TOPLES PESAN RAHASIA --- */
+        .random-message-section { padding: 20px 20px 50px; }
+        .jar-container { display: flex; flex-direction: column; align-items: center; margin-top: 15px; min-height: 150px; }
+        .draw-btn { background-color: #FFB6C1; color: white; border: none; padding: 15px 35px; font-size: 1.1em; font-family: 'Fredoka One', cursive; border-radius: 30px; cursor: pointer; box-shadow: 0 5px 15px rgba(255, 182, 193, 0.5); transition: 0.3s; z-index: 2; }
+        .draw-btn:hover { background-color: #FF69B4; transform: translateY(-3px) scale(1.05); }
+        .paper-hidden { display: none; background: #FFF8DC; padding: 20px; border-radius: 10px; border: 2px dashed #D2B48C; margin-top: 25px; width: 90%; max-width: 400px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); position: relative; }
+        .paper-show { display: block; animation: slideDown 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        .paper-show p { font-family: 'Quicksand', sans-serif; font-size: 1.1em; color: #555; font-weight: bold; font-style: italic; margin: 0; line-height: 1.5; }
+        @keyframes slideDown { 0% { opacity: 0; transform: translateY(-30px) scale(0.8); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+        
+        /* --- KUE ULANG TAHUN VIRTUAL --- */
+        .cake-section { padding: 20px 20px; }
+        .cake-container { display: flex; justify-content: center; margin-top: 40px; margin-bottom: 20px; }
+        .cake { position: relative; width: 150px; height: 100px; }
+        .sponge { width: 100%; height: 60px; background-color: #FFA07A; border-radius: 10px; position: absolute; bottom: 0; box-shadow: inset 0 -10px rgba(0,0,0,0.1); }
+        .icing { width: 100%; height: 40px; background-color: #FFF; border-radius: 10px 10px 20px 20px; position: absolute; top: 20px; box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
+        .candle { width: 16px; height: 45px; background: repeating-linear-gradient(45deg, #FF69B4, #FF69B4 5px, #FFF 5px, #FFF 10px); position: absolute; top: -25px; left: 50%; transform: translateX(-50%); border-radius: 3px; cursor: pointer; z-index: 10; transition: 0.3s; }
+        .candle:hover { transform: translateX(-50%) scale(1.1); }
+        .flame { width: 16px; height: 28px; background-color: #FFD700; border-radius: 50% 50% 20% 20%; position: absolute; top: -32px; left: 0; animation: flicker 0.5s infinite alternate; box-shadow: 0 0 15px #FFD700; transition: 0.3s ease-out; }
+        @keyframes flicker { 0% { transform: scale(1) rotate(-2deg); opacity: 0.9; } 100% { transform: scale(1.1) rotate(2deg); opacity: 1; } }
+        .flame.blown-out { opacity: 0; transform: scale(0) translateY(-20px); box-shadow: none; animation: none; }
+
+        /* --- KARTU GOSOK DIGITAL (SCRATCH CARD) --- */
+        .scratch-section { padding: 20px 20px; }
+        .scratch-container { position: relative; width: 100%; max-width: 320px; height: 180px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3); user-select: none; -webkit-user-select: none; }
+        .scratch-secret { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: #FFF0F5; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; box-sizing: border-box; border: 3px dashed #FF69B4; border-radius: 15px; }
+        .scratch-secret h3 { color: #FF1493; margin-bottom: 8px; font-size: 1.4em; }
+        .scratch-secret p { color: #4A4A4A; font-size: 1em; margin: 0; font-weight: bold; }
+        #scratchCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; z-index: 2; border-radius: 15px; }
+
+        /* --- SURAT CINTA MESIN KETIK --- */
+        .typewriter-section { padding: 20px 20px 40px; }
+        .letter-paper { background-color: #fdfbf7; background-image: repeating-linear-gradient(transparent, transparent 29px, rgba(255, 182, 193, 0.5) 30px); padding: 40px 20px 20px; border-radius: 5px; box-shadow: 2px 5px 15px rgba(0,0,0,0.15); max-width: 450px; margin: 0 auto; text-align: left; display: none; border-left: 2px solid #FF9AA2; }
+        .letter-paper.show-letter { display: block; animation: unfoldPaper 0.8s ease-out forwards; }
+        .typewriter-text { font-family: 'Quicksand', monospace; font-size: 1.05em; color: #4A4A4A; line-height: 30px; min-height: 150px; margin: 0; font-weight: 600; }
+        @keyframes unfoldPaper { 0% { transform: scaleY(0); transform-origin: top; opacity: 0; } 100% { transform: scaleY(1); transform-origin: top; opacity: 1; } }
+
+        /* --- PESAN SUARA (VOICE NOTE) --- */
+        .voice-note-container { margin: 20px auto 40px; text-align: center; background-color: #FFF0F5; padding: 20px; border-radius: 20px; max-width: 400px; border: 2px dashed #FF9AA2; box-shadow: 0 4px 10px rgba(255, 105, 180, 0.15); }
+        .voice-note-container p { font-family: 'Fredoka One', cursive; color: #FF69B4; margin-bottom: 15px; font-size: 1.1em; }
+        .vn-btn { background-color: #FF9AA2; color: white; border: none; padding: 12px 25px; font-size: 1.1em; font-family: 'Quicksand', sans-serif; font-weight: bold; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 154, 162, 0.4); transition: 0.3s; }
+        .vn-btn:hover { background-color: #FF69B4; transform: scale(1.05); }
+        .vn-btn.playing { background-color: #FF1493; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 20, 147, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(255, 20, 147, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 20, 147, 0); } }
+
+    </style>
+</head>
+<body>
+    
+    <!-- 1. GERBANG AKSES RAHASIA (LOGIN SCREEN) -->
+    <div id="loginScreen" class="login-container">
+        <img src="Loopy1.gif" alt="Loopy Love" width="150" class="loopy-love">
+        <h2>Halo! Siapa di sana? 🛑</h2>
+        <p>Sebelum masuk, jawab pertanyaan ini dulu:</p>
+        <p class="question">"Siapa nama cowok yang paling sayang sama kamu?"</p>
+        
+        <input type="text" id="passwordInput" placeholder="Ketik jawabanmu di sini...">
+        <br>
+        <button id="loginBtn">Masuk 🔑</button>
+        <p id="errorMessage" class="error-text"></p>
+    </div>
+
+    <!-- 2. KONTEN WEBSITE UTAMA (Disembunyikan di awal) -->
+    <div id="mainContent" style="display: none;">
+    
+        <!-- 🌟 GAMBAR BARU YANG MUNCUL SETELAH LOGIN 🌟 -->
+        <div style="text-align: center; margin-top: 30px;">
+            <img src="Loopy3.gif" alt="Kejutan Setelah Login" style="width: 80%; max-width: 300px; border-radius: 20px; box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);">
+            <h2 style="color: #FF69B4; font-family: 'Fredoka One', cursive; margin-top: 15px;">Yeay, berhasil masuk! 🎉</h2>
+        </div>
+        
+        <!-- HERO SECTION -->
+        <header class="hero">
+            <img src="Loopy4.gif" alt="Loopy Lucu" class="loopy-img">
+            <h1>Happy Birthday, Sayang! 🎂</h1>
+        </header>
+        
+        <!-- 🌟 KUE ULANG TAHUN VIRTUAL 🌟 -->
+        <section class="cake-section" data-aos="zoom-in">
+            <div class="box" style="background-color: transparent; box-shadow: none;">
+                <h2>Make a Wish! 🎂</h2>
+                <p>Tutup mata, buat permohonan di dalam hati, lalu tap/klik lilinnya buat ditiup!</p>
+                
+                <div class="cake-container">
+                    <div class="cake">
+                        <!-- Lilin yang bisa diklik -->
+                        <div class="candle" onclick="blowCandle(this)">
+                            <div class="flame"></div>
+                        </div>
+                        <div class="icing"></div>
+                        <div class="sponge"></div>
+                    </div>
+                </div>
+                
+                <p id="wishText" class="hidden" style="color: #FF1493; font-weight: bold; margin-top: 30px; font-size: 1.2em; font-family: 'Fredoka One', cursive;">
+                    Yay! Semoga semua permohonan kamu dikabulkan oleh Allah SWT sayang! Aamiin... 🎉
+                </p>
+            </div>
+        </section>
+        <!-- 🌟 AKHIR KUE ULANG TAHUN 🌟 -->
+
+        <!-- LOVE LETTER -->
+        <section class="love-letter" data-aos="fade-up" data-aos-duration="1000">
+            <div class="box">
+                <h2>Untuk Perempuan Hebatku 💖</h2>
+                <p>Selamat ulang tahun! Terima kasih sudah jadi orang yang luar biasa. Semoga hari-harimu selalu semanis kue dan selucu Loopy. Aku selalu mendoakan yang terbaik buat kamu.</p>
+                <p class="signature">- Cowok Kamu -</p>
+            </div>
+        </section>
+
+        <!-- 🌟 FITUR PESAN SUARA (VOICE NOTE) 🌟 -->
+        <div class="voice-note-container" data-aos="zoom-in">
+            <p>Ada pesan suara spesial buat kamu nih 🎧</p>
+            <audio id="myAudio" src="suara-miftah.mp3"></audio>
+            <button id="playAudioBtn" class="vn-btn">▶️ Putar Suara Miftah</button>
+        </div>
+
+        <!-- 🌟 KALKULATOR WAKTU BERSAMA 🌟 -->
+        <section class="time-counter" data-aos="fade-up">
+            <div class="box" style="background-color: transparent; box-shadow: none;">
+                <h2>Waktu Bersama Kita ⏳</h2>
+                <p>Setiap detiknya berharga banget buat aku...</p>
+                <div class="counter-container">
+                    <div class="time-box"><span id="days">0</span><small>Hari</small></div>
+                    <div class="time-box"><span id="hours">0</span><small>Jam</small></div>
+                    <div class="time-box"><span id="minutes">0</span><small>Menit</small></div>
+                    <div class="time-box"><span id="seconds">0</span><small>Detik</small></div>
+                </div>
+            </div>
+        </section>
+        <!-- 🌟 AKHIR KALKULATOR 🌟 -->
+
+        <!-- SPOTIFY PLAYER -->
+        <div style="max-width: 500px; margin: 20px auto; padding: 0 20px;" data-aos="fade-up">
+            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/5mtTAScDytxMMqZj14NmlN?utm_source=generator&si=6a6e54a13bdc4225" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        
+        <!-- GALLERY -->
+        <section class="gallery">
+            <h2 data-aos="fade-up">Our Memory Lane 📸</h2>
+            <div class="photo-grid">
+                <div class="photo" data-aos="flip-left" data-aos-delay="100"><img src="foto1.jpeg" alt="Foto 1"></div>
+                <div class="photo" data-aos="flip-left" data-aos-delay="300"><img src="foto2.jpeg" alt="Foto 2"></div>
+                <div class="photo" data-aos="flip-left" data-aos-delay="500"><img src="foto3.jpeg" alt="Foto 3"></div>
+            </div>
+        </section>
+
+        <!-- 🌟 PEMINDAI SIDIK JARI JODOH 🌟 -->
+        <section class="scanner-section" data-aos="zoom-in">
+            <div class="box">
+                <h2>Cek Kecocokan Kita 🧬</h2>
+                <p>Tahan jari kamu di tombol bawah ini selama 3 detik buat ngecek kecocokan sidik jari kita!</p>
+                <div class="scanner-container">
+                    <button id="scanBtn" class="scan-btn">👆 Tahan Di Sini</button>
+                    <div class="progress-bar-bg">
+                        <div id="scanProgress" class="progress-fill"></div>
+                    </div>
+                    <p id="scanStatus">Menunggu sidik jari...</p>
+                </div>
+                <div id="scanResult" class="hidden result-box">
+                    <h3>Kecocokan: 1000% 💖</h3>
+                    <p>Sistem mendeteksi bahwa kamu adalah jodoh sejati dan takdirnya aku sayangg! 🥰</p>
+                </div>
+            </div>
+        </section>
+        <!-- 🌟 AKHIR PEMINDAI SIDIK JARI 🌟 -->
+
+        <!-- 🌟 MESIN PESAN RAHASIA 🌟 -->
+        <section class="random-message-section" data-aos="fade-up">
+            <div class="box" style="background-color: transparent; box-shadow: none;">
+                <h2>Toples Cinta Kita 🫙</h2>
+                <p>Klik tombol di bawah untuk ambil satu gulungan kertas rahasia dari aku!</p>
+                <div class="jar-container">
+                    <button id="drawMessageBtn" class="draw-btn">Ambil Pesan 📜</button>
+                    <div id="paperMessage" class="paper-hidden">
+                        <p id="randomText"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 🌟 AKHIR MESIN PESAN RAHASIA 🌟 -->
+
+        <!-- 🌟 KUPON CINTA DIGITAL 🌟 -->
+        <section class="love-coupons" data-aos="fade-up">
+            <div class="box" style="background-color: transparent; box-shadow: none;">
+                <h2>Kupon Spesial Buat Kamu 🎟️</h2>
+                <p>Pilih dan klaim hadiahmu! (Hanya bisa diklaim satu per satu ya 😘)</p>
+                <div class="coupon-container">              
+                    <div class="coupon" onclick="claimCoupon(this)">
+                        <h3>🎬 Nonton Bioskop</h3>
+                        <p>Bebas pilih film kesukaanmu, tiket dan popcorn aman!</p>
+                        <span class="status">Klaim Kupon</span>
+                    </div>
+                    <div class="coupon" onclick="claimCoupon(this)">
+                        <h3>🧸 Bebas Ngambek</h3>
+                        <p>Kupon sakti! Aku nggak boleh marah sama kamu seharian.</p>
+                        <span class="status">Klaim Kupon</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 🌟 AKHIR KUPON CINTA 🌟 -->
+        
+        <!-- 🌟 KARTU RAHASIA 3D 🌟 -->
+        <section class="flip-cards-section" data-aos="fade-up">
+            <div class="box" style="background-color: transparent; box-shadow: none;">
+                <h2>3 Fakta Tentang Kita 🤫</h2>
+                <p>Coba sentuh atau tap kartu-kartu di bawah ini!</p>
+                <div class="flip-cards-container">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Hal yang paling<br>aku suka dari kamu...</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Senyum kamu yang selalu bikin tenang, dan cerewetnya kamu! 🥰</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Momen yang paling<br>bikin aku kangen...</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Kalau kita lagi jalan berdua dan ngobrolin hal random sampai lupa waktu. 🛵💨</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <h3>Janji aku buat kamu<br>di umur 21 ini...</h3>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Bakal terus berusaha jadi pasangan yang bisa kamu andalkan dan banggakan! 🤞💖</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- 🌟 AKHIR KARTU RAHASIA 3D 🌟 -->
+
+        <!-- MINI GAME TOMBOL KABUR -->
+        <section class="mini-game" data-aos="fade-up">
+            <div class="box" style="background-color: transparent; box-shadow: none;">
+                <h2>Kuis Kejujuran 🕵️‍♀️</h2>
+                <p>Satu pertanyaan terakhir: Seberapa sayang kamu sama Cowok Kamu?</p>
+                <div class="game-buttons">
+                    <button id="btnSayang">Sayang Banget! 🥰</button>
+                    <button id="btnNggak">Biasa Aja 🏃‍♀️</button>
+                </div>
+                <p id="gameResult" class="hidden" style="color: #FF69B4; font-weight: bold; margin-top: 20px;">
+                    Hehehe, makasih sayang! Ini kejutan buat kamu 👇
+                </p>
+            </div>
+        </section>
+
+        <!-- TOMBOL KEJUTAN -->
+        <section id="surpriseContainer" class="surprise-section hidden">
+            <button id="surpriseBtn">Klik untuk Kejutan! 🎁</button>
+            <div id="hiddenMessage" class="hidden">
+                <h3>I Love You! 💕</h3>
+                <p>Semoga di umur yang baru ini, semua impian kamu tercapai. 
+                Selalu dimudahkan segala urusannya Dan selalu mendapatkan kebahagiaan, 
+                selalu dimudahkan saat menghadapi masalah apapun. 
+                Aku sayangg sama kamu sayanggkuu, cintakuuu, cantikkuuu. 
+                Lovee Youu Perempuankuu. Let's make more beautiful memories together!</p>
+                <img src="Loopy2.gif" alt="Loopy Love" width="150" class="loopy-love">
+            </div>
+        </section>
+
+        <!-- KOTAK BALASAN (Formspree) -->
+        <section class="reply-section" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="box">
+                <h2>Balas Pesanku 💌</h2>
+                <p>Ada yang mau disampein setelah baca surat di atas?</p>
+                <form action="https://formspree.io/f/meaadbwr" method="POST">
+                    <input type="hidden" name="pengirim" value="Sayangg">
+                    <textarea name="pesan" rows="4" placeholder="Ketik balasan kamu di sini..." required></textarea>
+                    <button type="submit" class="submit-btn">Kirim Pesan 🚀</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 🌟 SURAT CINTA MESIN KETIK 🌟 -->
+        <section class="typewriter-section" data-aos="fade-up">
+            <div class="box" style="background-color: transparent; box-shadow: none;">
+                <h2>Pesan Dari Lubuk Hati 💌</h2>
+                <p>Ada satu surat terakhir yang aku tulis spesial buat kamu.</p>
+                
+                <button id="openLetterBtn" class="draw-btn" style="margin-bottom: 20px;">Buka Surat</button>
+                
+                <div id="letterPaper" class="letter-paper">
+                    <p id="typewriterText" class="typewriter-text"></p>
+                </div>
+            </div>
+        </section>
+        <!-- 🌟 AKHIR SURAT CINTA MESIN KETIK 🌟 -->
+
+    </div>
+
+    <!-- 🌟 POP-UP NOTIFIKASI LUCU 🌟 -->
+    <div id="cuteToast" class="toast-hidden">
+        <img src="Loopy1.gif" alt="Notif Loopy" width="50" style="border-radius: 50%;">
+        <div class="toast-text">
+            <strong>Pesan Masuk 💌</strong>
+            <p>Cieee yang tambah tua 😝 tapi makin cantik! 💕</p>
+        </div>
+    </div>
+    <!-- 🌟 AKHIR DARI MAIN CONTENT 🌟 -->
+
+    <!-- 🌟 SCRIPT JS AOS 🌟 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Script kamu sendiri -->
+    <script src="script.js"></script>
+</body>
+</html>
